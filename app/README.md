@@ -1,19 +1,19 @@
 # Weather AI Service
 
-A FastAPI-based weather intelligence service that consumes weather data from OpenWeather and generates AI-style weather insights.
+A FastAPI-based weather intelligence service that consumes real-time weather data from OpenWeather and generates AI-style weather insights and recommendations. The service is deployed on Render and exposes a public REST API.
 
 ## Features
 
-- Real-time weather data retrieval
-- AI-style weather recommendations
+- Real-time weather data retrieval by city
+- AI-style weather recommendations and insights
 - In-memory caching for improved performance
 - FastAPI REST API
 - Environment variable configuration
 - Production-ready structure
+- Cloud deployment support (Render)
 
 ## Project Structure
 
-```
 app/
 ├── controllers/
 ├── services/
@@ -21,70 +21,46 @@ app/
 ├── main.py
 ├── config.py
 └── __init__.py
-```
 
 ## Installation
 
-### Clone Repository
-
-```bash
-git clone <repository-url>
+Clone the repository:
+git clone https://github.com/makaz521/weather-ai-service.git
 cd weather-ai-service
-```
 
-### Install Dependencies
-
-```bash
+Install dependencies:
 python -m pip install -r requirements.txt
-```
 
-### Configure Environment Variables
-
-Create a `.env` file:
-
-```env
+Create a .env file:
 OPENWEATHER_API_KEY=your_api_key_here
-```
 
-### Run Application
-
-```bash
+Run the application:
 python -m uvicorn app.main:app --reload
-```
+
+Server runs at:
+http://127.0.0.1:8000
 
 ## API Endpoints
 
-### Home
-
-```http
+Home:
 GET /
-```
 
 Response:
-
-```json
 {
   "message": "Weather AI Service Running"
 }
-```
 
-### Weather
-
-```http
+Weather:
 GET /weather?city=Nairobi
-```
 
-Example Response:
-
-```json
+Example response:
 {
   "city": "Nairobi",
   "temperature": 16.6,
   "humidity": 87,
   "condition": "overcast clouds",
-  "insight": "Weather feels cool with humid conditions. Current condition is overcast clouds. You should wear a light jacket and expect mild skies."
+  "insight": "Weather feels cool with humid conditions. Light jacket recommended."
 }
-```
 
 ## Technology Stack
 
@@ -96,8 +72,10 @@ Example Response:
 
 ## Deployment
 
-Designed for deployment on Render.
+Live on Render:
+https://weather-ai-service-o5f4.onrender.com
 
 ## Author
 
-Dennis Makau
+Dennis Muema
+GitHub: https://github.com/makaz521
